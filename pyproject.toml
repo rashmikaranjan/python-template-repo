@@ -1,0 +1,25 @@
+#Enables strict linting rules (checks for errors, unused imports, naming issues, etc.)
+
+[tool.ruff]
+line-length = 88 # Recommended max line length
+
+[tool.ruff.lint]
+select = [
+	"E",
+	"F",
+	"I",
+	"N",
+	"B",
+	"D",
+	"UP",
+	"ANN",
+	"TID",
+	"SIM",
+	"PL",
+	"C4",
+	"PTH",
+]
+ignore = ["D203"]
+
+[tool.ruff.format]
+quote-style = "double" # Ensures double quotes are used consistently
