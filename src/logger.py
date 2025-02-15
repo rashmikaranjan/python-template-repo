@@ -3,7 +3,13 @@ import logging
 LOG_FILE = "operations.log"
 
 # Configure logging to write to a file
-logging.basicConfig(filename=LOG_FILE, level=logging.INFO, format="%(message)s", filemode="w")
+logging.basicConfig(
+    filename=LOG_FILE,
+    level=logging.INFO,
+    format="%(asctime)s - %(levelname)s - %(message)s",
+    filemode="w",
+)
+
 logger = logging.getLogger('logger')
 logger.setLevel(logging.DEBUG)
 fh = logging.FileHandler('operations.log')
