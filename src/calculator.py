@@ -15,7 +15,9 @@ class Calculator:
         """Return the product of two numbers."""
         return a * b
     def divide(self, a: float, b: float) -> float:
-        """Return the quotient of two numbers."""
-        if b == 0:
-            raise ValueError("Cannot divide by zero")
-        return a / b
+        """Return the quotient of two numbers, handling division by zero safely."""
+        try:
+            return a / b
+        except ZeroDivisionError as e:
+            raise ValueError("Cannot divide by zero") from e
+
