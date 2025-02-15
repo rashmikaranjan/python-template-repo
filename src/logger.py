@@ -1,3 +1,5 @@
+"""Logger module for logging operations performed."""
+
 import logging
 
 LOG_FILE = "operations.log"
