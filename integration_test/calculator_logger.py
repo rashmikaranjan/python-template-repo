@@ -1,3 +1,5 @@
+"""Integration tests for Calculator and Logger components."""
+
 import pytest
 from unittest.mock import Mock
 from src.calculator import Calculator
@@ -5,8 +7,12 @@ from src.logger import Logger
 from src.notifier import Notifier
 
 class TestCalculatorLoggerIntegration:
+    """Test suite for Calculator and Logger integration."""
+
     @pytest.fixture
     def setup_components(self):
+        """Setting up test components with Calculator, Logger and mocked Notifier."""
+        
         calculator = Calculator()
         mock_notifier = Mock(spec=Notifier)  # Not used but available if needed
         logger = Logger()
@@ -18,6 +24,8 @@ class TestCalculatorLoggerIntegration:
         ("multiply", 7, 2, 14),
     ])
     def test_calculator_logger_operations(self, setup_components, operation, a, b, expected, caplog):
+        """Testing if basic calculator operations are performed and logged correctly"""
+        
         calculator, logger, _ = setup_components
         caplog.set_level('INFO')
 
@@ -30,6 +38,8 @@ class TestCalculatorLoggerIntegration:
         assert log_message in caplog.text  # Verify the log message
 
     def test_calculator_logger_division(self, setup_components, caplog):
+        """Testing division operation."""
+        
         calculator, logger, _ = setup_components
         caplog.set_level('INFO')
 
@@ -42,6 +52,8 @@ class TestCalculatorLoggerIntegration:
         assert log_message in caplog.text
 
     def test_calculator_logger_division_by_zero(self, setup_components, caplog):
+        """Testing if division by zero error is caught and logged correctly."""
+
         calculator, logger, _ = setup_components
         caplog.set_level('INFO')
 
