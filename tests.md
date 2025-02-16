@@ -37,3 +37,11 @@ or for detailed output:
 ```sh
 python -m pytest -v -s integration_test/logger_notifier.py
 ```
+
+
+To run **End to End Tests** correctly, please use:
+```sh
+python -m pytest test_e2e.py
+```
+
+For the output, please refer the **operations.log** file.
