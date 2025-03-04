@@ -13,6 +13,11 @@ dependencies = [
     "mypy",
 ]
 
+[tool.pytest.ini_options]
+testpaths = ["tests", "integration_test"]
+
+python_files = ["*.py"]
+
 [tool.ruff]
 line-length = 88 # Recommended max line length
 
