@@ -1,5 +1,18 @@
 #Enables strict linting rules (checks for errors, unused imports, naming issues, etc.)
 
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "python-template-repo"
+version = "0.1.0"
+dependencies = [
+    "pytest",
+    "ruff",
+    "mypy",
+]
+
 [tool.ruff]
 line-length = 88 # Recommended max line length
 
