@@ -8,13 +8,26 @@ jobs:
       - checkout
 
       - run:
-          name: Install Dependencies
+          name: Install UV
           command: |
             curl -LsSf https://astral.sh/uv/install.sh | sh
-            export PATH="$HOME/.local/bin:$PATH"
+            echo 'export PATH="$HOME/.local/bin:$PATH"' >> $BASH_ENV
+            source $BASH_ENV
+
+      - run:
+          name: Install Dependencies
+          command: |
             uv pip install -r requirements.txt
             uv pip install pytest-cov
             uv pip install -e .
+
+      - run:
+          name: Debug UV Installation
+          command: |
+            echo "UV Path: $(which uv)"
+            echo "Python Version: $(python --version)"
+            echo "Available Binaries:"
+            ls -lah $HOME/.local/bin
 
       - run:
           name: Set PYTHONPATH
