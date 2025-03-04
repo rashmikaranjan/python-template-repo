@@ -1,9 +1,9 @@
 """End to end tests for Calculator, Logger & Notifier."""
 
 import pytest
-from src.calculator import Calculator
-from src.logger import Logger
-from src.notifier import Notifier
+from src.calculator.calculator import Calculator
+from src.logger.logger import Logger
+from src.notifier.notifier import Notifier
 
 @pytest.fixture
 def setup_objects():
