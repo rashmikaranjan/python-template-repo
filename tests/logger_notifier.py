@@ -2,8 +2,8 @@
 
 import pytest
 from unittest.mock import Mock
-from src.logger import Logger
-from src.notifier import Notifier
+from src.logger.logger import Logger
+from src.notifier.notifier import Notifier
 
 class TestLoggerNotifierIntegration:
     """Test suite for Logger and Notifier integration."""

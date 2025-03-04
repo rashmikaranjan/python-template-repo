@@ -2,9 +2,9 @@
 
 import pytest
 from unittest.mock import Mock
-from src.calculator import Calculator
-from src.logger import Logger
-from src.notifier import Notifier
+from src.calculator.calculator import Calculator
+from src.logger.logger import Logger
+from src.notifier.notifier import Notifier
 
 class TestCalculatorLoggerIntegration:
     """Test suite for Calculator and Logger integration."""
