@@ -17,9 +17,9 @@ jobs:
       - run:
           name: Install Dependencies
           command: |
-            uv pip install -r requirements.txt
-            uv pip install pytest-cov
-            uv pip install -e .
+            uv pip install --system -r requirements.txt
+            uv pip install --system pytest-cov
+            uv pip install --system -e .
 
       - run:
           name: Debug UV Installation
