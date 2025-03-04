@@ -1,6 +1,6 @@
 """Unit tests for Notifier module."""
 
-from notifier.notifier import Notifier
+from src.notifier import Notifier
 
 THRESHOLD = 10
 HIGH_VALUE = 15
