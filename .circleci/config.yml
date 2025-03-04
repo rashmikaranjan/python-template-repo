@@ -22,12 +22,8 @@ jobs:
             uv pip install --system -e .
 
       - run:
-          name: Debug UV Installation
-          command: |
-            echo "UV Path: $(which uv)"
-            echo "Python Version: $(python --version)"
-            echo "Available Binaries:"
-            ls -lah $HOME/.local/bin
+          name: Create test-results directory
+          command: mkdir -p test-results
 
       - run:
           name: Set PYTHONPATH
