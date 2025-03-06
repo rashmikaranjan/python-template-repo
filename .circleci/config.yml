@@ -77,6 +77,8 @@ workflows:
       - lint_and_test:
           filters:
             branches:
-              ignore: []
+              only:
+                - main
             pull_requests:
-              ignore: []
+              only:
+                - "*" 
