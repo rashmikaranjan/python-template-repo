@@ -36,6 +36,8 @@ This repository includes three key components: (please refer to `component.md`)
 
 ✅ **Running Tests**
 
+This project uses **pytest** for unit, integration and end-to-end testing.
+
 ### **Unit Tests**
 
 - **Run all unit tests:**
@@ -63,27 +65,27 @@ python -m pytest src
 
   **For `calculator_logger`:**
   ```sh
-  python -m pytest integration_test/calculator_logger.py
+  python -m pytest tests/calculator_logger.py
   ```
   **For detailed output:**
   ```sh
-  python -m pytest -v -s integration_test/calculator_logger.py
+  python -m pytest -v -s tests/calculator_logger.py
   ```
 
   **For `logger_notifier`:**
   ```sh
-  python -m pytest integration_test/logger_notifier.py
+  python -m pytest tests/logger_notifier.py
   ```
   **For detailed output:**
   ```sh
-  python -m pytest -v -s integration_test/logger_notifier.py
+  python -m pytest -v -s tests/logger_notifier.py
   ```
 
 ### **End-to-End Tests**
 
 - **Run E2E test correctly:**
 ```sh
-python -m pytest test_e2e.py
+python -m pytest tests/e2e.py
 ```
 
 For the output, please refer to the **operations.log** file.
