@@ -1,0 +1,1 @@
+"""Package provides functionality for Notifier."""
