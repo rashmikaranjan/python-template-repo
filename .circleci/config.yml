@@ -74,11 +74,4 @@ workflows:
   version: 2
   test-workflow:
     jobs:
-      - lint_and_test:
-          filters:
-            branches:
-              only:
-                - "*"
-            pull_requests:
-              only:
-                - "*"
+      - lint_and_test # test
