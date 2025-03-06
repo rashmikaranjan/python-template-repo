@@ -1,16 +1,19 @@
 """Integration tests for Logger and Notifier components."""
 
-import pytest
 from unittest.mock import Mock
+
+import pytest
+
 from src.logger.logger import Logger
 from src.notifier.notifier import Notifier
 
+
 class TestLoggerNotifierIntegration:
     """Test suite for Logger and Notifier integration."""
+
     @pytest.fixture
     def setup_components(self):
         """Setting up test components with Logger, Notifier and mocked Calculator."""
-
         mock_calculator = Mock()  # Not used but available if needed
         notifier = Notifier(threshold=10)
         logger = Logger()
@@ -18,7 +21,6 @@ class TestLoggerNotifierIntegration:
 
     def test_log_below_threshold(self, setup_components, caplog):
         """Testing logging when value is below notification threshold."""
-
         _, logger, notifier = setup_components
         caplog.set_level('INFO')
 
@@ -30,7 +32,6 @@ class TestLoggerNotifierIntegration:
 
     def test_log_above_threshold(self, setup_components, caplog):
         """Testing logging when value exceeds notification threshold."""
-
         _, logger, notifier = setup_components
         caplog.set_level('INFO')
 
@@ -42,7 +43,6 @@ class TestLoggerNotifierIntegration:
 
     def test_log_at_threshold(self, setup_components, caplog):
         """Testing logging when value equals notification threshold."""
-
         _, logger, notifier = setup_components
         caplog.set_level('INFO')
 
@@ -54,7 +54,6 @@ class TestLoggerNotifierIntegration:
 
     def test_log_error(self, setup_components, caplog):
         """Testing error message logging."""
-        
         _, logger, _ = setup_components
         caplog.set_level('INFO')
 
