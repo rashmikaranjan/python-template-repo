@@ -2,7 +2,7 @@
 
 import pytest
 
-from src.calculator import Calculator
+from .calculator import Calculator
 
 # Constants for testing
 TWO = 2
