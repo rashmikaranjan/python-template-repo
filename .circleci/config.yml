@@ -53,7 +53,7 @@ jobs:
       - run:
           name: Run Nose2 Tests
           command: |
-            nose2 --config nose2.cfg | tee test-results/nose2-output.log
+            nose2 -v --start-dir=src --start-dir=tests | tee test-results/nose2-output.log
 
       - run:
           name: Check Test Results
