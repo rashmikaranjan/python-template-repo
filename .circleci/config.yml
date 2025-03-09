@@ -18,8 +18,6 @@ jobs:
           name: Install Dependencies
           command: |
             uv pip install --system -r requirements.txt
-            uv pip install --system pytest-cov
-            uv pip install --system nose
             uv pip install --system -e .
 
       - run:
@@ -49,7 +47,7 @@ jobs:
       - run:
           name: Run Tests with Coverage
           command: |
-            pytest --with-nose --cov=src --cov-report=xml --cov-report=html --junitxml=test-results/junit.xml \
+            pytest --cov=src --cov-report=xml --cov-report=html --junitxml=test-results/junit.xml \
             --cov-config=pyproject.toml | tee test-results/output.log
 
       - run:

@@ -9,7 +9,9 @@ name = "python-template-repo"
 version = "0.1.0"
 dependencies = [
     "pytest",
+	"pytest-cov",
 	"nose",
+	"pytest-nose",
     "ruff",
     "mypy",
 ]
