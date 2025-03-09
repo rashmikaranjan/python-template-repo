@@ -51,10 +51,9 @@ jobs:
             --cov-config=pyproject.toml | tee test-results/output.log
 
       - run:
-          name: Run Nose Tests
+          name: Run Nose2 Tests
           command: |
-            nosetests tests integration_test \
-            tee test-results/nose-output.log
+            nose2 --config nose2.cfg | tee test-results/nose2-output.log
 
       - run:
           name: Check Test Results

@@ -10,7 +10,7 @@ version = "0.1.0"
 dependencies = [
     "pytest",
 	"pytest-cov",
-	"nose",
+	"nose2",
     "ruff",
     "mypy",
 ]
