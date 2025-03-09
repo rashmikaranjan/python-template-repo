@@ -18,7 +18,6 @@ dependencies = [
 [tool.pytest.ini_options]
 testpaths = ["tests", "integration_test"]
 python_files = ["*.py"]
-addopts = "--with-nose"
 
 [tool.coverage.run]
 branch = true
