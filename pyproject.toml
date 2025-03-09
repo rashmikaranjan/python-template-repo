@@ -15,7 +15,7 @@ dependencies = [
 ]
 
 [tool.pytest.ini_options]
-testpaths = ["tests", "integration_test"]
+testpaths = ["tests", "integration_test", "src"]
 python_files = ["*.py"]
 
 [tool.coverage.run]
