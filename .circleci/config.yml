@@ -51,10 +51,10 @@ jobs:
             --cov-config=pyproject.toml | tee test-results/output.log
 
       - run:
-          name: Run Nose Tests Separately
+          name: Run Nose Tests
           command: |
-            nosetests --with-coverage --cover-package=src \
-            | tee test-results/nose-output.log
+            nosetests tests integration_test \
+            tee test-results/nose-output.log
 
       - run:
           name: Check Test Results
