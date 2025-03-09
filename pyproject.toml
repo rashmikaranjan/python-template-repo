@@ -9,14 +9,15 @@ name = "python-template-repo"
 version = "0.1.0"
 dependencies = [
     "pytest",
+	"nose",
     "ruff",
     "mypy",
 ]
 
 [tool.pytest.ini_options]
 testpaths = ["tests", "integration_test"]
-
 python_files = ["*.py"]
+addopts = "--with-nose"
 
 [tool.coverage.run]
 branch = true
