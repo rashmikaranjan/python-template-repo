@@ -21,13 +21,16 @@ jobs:
             uv pip install --system -e .
 
       - run:
-          name: Create test-results directory
-          command: mkdir -p test-results
+          name: Create test-results directory and Log File for Logger Tests
+          command: |
+            mkdir -p test-results
+            mkdir -p src/logger && touch src/logger/operations.log
 
       - run:
           name: Set PYTHONPATH
           command: |
             echo "export PYTHONPATH=$PYTHONPATH:$(pwd)/src" >> $BASH_ENV
+            source $BASH_ENV
 
       - run:
           name: Run Ruff Linting
@@ -41,8 +44,7 @@ jobs:
 
       - run:
           name: Verify Tests Exist
-          command: |
-            pytest --collect-only
+          command: pytest --collect-only
 
       - run:
           name: Run Tests with Coverage
