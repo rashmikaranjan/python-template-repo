@@ -21,6 +21,9 @@ python_files = ["test_*.py"]
 [tool.coverage.run]
 branch = true
 source = ["src"]
+omit = [
+    "src/**/test_*.py",
+]
 
 [tool.ruff]
 line-length = 88 # Recommended max line length
