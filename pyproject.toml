@@ -12,14 +12,15 @@ requires-python = ">=3.12"  # Minimum required Python version
 
 # List of dependencies required for your project
 dependencies = [
-    "coverage>=7.6.12",  # Code coverage analysis
-    "fastapi>=0.115.11",  # Web framework for APIs
-    "mypy>=1.15.0",  # Static type checker
-    "numpy>=2.2.3",  # Numerical computing library
-    "pluggy>=1.5.0",  # Plugin management system
-    "pytest>=8.3.5",  # Testing framework
-    "requests>=2.32.3",  # HTTP requests library
-    "ruff>=0.9.10",  # Linter and formatter
+    "coverage>=7.6.12", # Code coverage analysis
+    "fastapi>=0.115.11", # Web framework for APIs
+    "mypy>=1.15.0", # Static type checker
+    "numpy>=2.2.3", # Numerical computing library
+    "pluggy>=1.5.0", # Plugin management system
+    "pytest>=8.3.5",
+    "pytest-cov>=6.0.0", # Testing framework
+    "requests>=2.32.3", # HTTP requests library
+    "ruff>=0.9.10", # Linter and formatter
 ]
 
 # Pytest Configuration (for running tests)
