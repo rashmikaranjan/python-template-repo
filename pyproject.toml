@@ -9,14 +9,21 @@ name = "python-template-repo"
 version = "0.1.0"
 dependencies = [
     "pytest",
+	"pytest-cov",
     "ruff",
     "mypy",
 ]
 
 [tool.pytest.ini_options]
-testpaths = ["tests", "integration_test"]
+testpaths = ["tests", "integration_test", "src"]
+python_files = ["test_*.py"]
 
-python_files = ["*.py"]
+[tool.coverage.run]
+branch = true
+source = ["src"]
+omit = [
+    "src/**/test_*.py",
+]
 
 [tool.ruff]
 line-length = 88 # Recommended max line length
