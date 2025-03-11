@@ -21,18 +21,13 @@ jobs:
             uv pip install --system -e .
 
       - run:
-          name: Ensure Log File Exists
-          command: |
-            mkdir -p src/logger
-            touch src/logger/operations.log
-            ls -l src/logger/operations.log  # ✅ Print file details to confirm creation
+          name: Create test-results directory
+          command: mkdir -p test-results
 
       - run:
           name: Set PYTHONPATH
           command: |
             echo "export PYTHONPATH=$PYTHONPATH:$(pwd)/src" >> $BASH_ENV
-            source $BASH_ENV
-            echo "PYTHONPATH is set to: $PYTHONPATH"  # ✅ Verify PYTHONPATH is set correctly
 
       - run:
           name: Run Ruff Linting
@@ -46,13 +41,14 @@ jobs:
 
       - run:
           name: Verify Tests Exist
-          command: pytest --collect-only tests/ src/ # ✅ Ensure tests are collected from both `tests/` and `src/`
+          command: |
+            pytest --collect-only
 
       - run:
           name: Run Tests with Coverage
           command: |
-            pytest tests/ src/ --cov=src --cov-report=xml --cov-report=html --junitxml=test-results/junit.xml \
-            --cov-config=pyproject.toml | tee test-results/output.log  # ✅ Ensure `test_logger.py` is executed
+            pytest --cov=src --cov-report=xml --cov-report=html --junitxml=test-results/junit.xml \
+            --cov-config=pyproject.toml | tee test-results/output.log
 
       - run:
           name: Check Test Results
