@@ -108,15 +108,15 @@ python -m pytest tests
 📊 **CI/CD Links**
 1. *Passed Tests:*
 ```sh
-
+https://app.circleci.com/pipelines/circleci/PSPAqb61iTnmZKKMnwKv5y/GjLaCzQtg7o9JRt3fefk5f/137/workflows/ced0bc29-6728-49d6-9144-7832824a2690/jobs/139/steps
 ```
 2. *Failed Tests:*
 ```sh
-
+https://app.circleci.com/pipelines/circleci/PSPAqb61iTnmZKKMnwKv5y/GjLaCzQtg7o9JRt3fefk5f/133/workflows/12178a55-f62a-4a8f-a522-fcdf42f11a4c/jobs/134
 ```
 3. *Viewing Coverage Report:*
 ```sh
-https://output.circle-artifacts.com/output/job/0011c25d-67b5-44be-9d81-cdeb94aa7f68/artifacts/0/coverage_html/index.html
+https://output.circle-artifacts.com/output/job/5c84c65e-f546-42a0-a571-00298281fb0f/artifacts/0/coverage_html/index.html
 ```
 
 ### **CI/CD Pipeline (CircleCI)**
