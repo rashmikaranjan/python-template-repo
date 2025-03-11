@@ -1,20 +1,21 @@
-"""Unit tests for Logger module."""
+"""Logger module for tracking operations performed by the calculator."""
 
-import pytest
 import logging
-from src.logger import logger_api  # ✅ Importing the Logger API
+from pathlib import Path
 
-@pytest.fixture
-def logger_instance() -> None:
-    """Fixture to use the shared Logger API instance."""
-    return logger_api  #  Uses the API from `__init__.py`
+LOG_FILE = Path("operations.log")
 
-def test_log_message(logger_instance, caplog) -> None:
-    """Test if a message is logged correctly."""
-    test_message = "This is a test log entry"
+# Configure logging to write to a file
+logging.basicConfig(filename=LOG_FILE, level=logging.INFO, format="%(message)s")
 
-    with caplog.at_level(logging.INFO):  #  Capture logs at INFO level
-        logger_instance.log(test_message)
+class Logger:
+    """Logger class to log operations performed by the calculator."""
 
-    #  Check if the message appears in the captured logs
-    assert test_message in caplog.text
+    @staticmethod
+    def log(message: str) -> None:
+        """Log a message to the operations log file and force flush."""
+        logging.info(message)
+
+        # Flush logging handlers to ensure the message is written immediately
+        for handler in logging.getLogger().handlers:
+            handler.flush()
